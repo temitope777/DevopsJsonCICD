@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ppsxip.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://ppsxip.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ppsxip.com/webservices/">
+      <s:import />
+      <s:element name="GetPPSAssetDetailsParam_Refinery">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPPSAssetDetailsParam_RefineryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSAssetDetailsParam_RefineryResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetPPSMarketPricesParam_BusinessUnit">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPPSMarketPricesParam_BusinessUnitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSMarketPricesParam_BusinessUnitResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSFinanceReportsParam_Refinery">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPPSFinanceReportsParam_RefineryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSFinanceReportsParam_RefineryResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSAssetDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="refinery" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSAssetDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSAssetDetailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSMarketPrices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BusinessUnit" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSMarketPricesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSMarketPricesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSPipeTariffs">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetPPSPipeTariffsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSPipeTariffsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSFinanceReports">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="refinery" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSFinanceReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPPSFinanceReportsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetShippingInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSDiffDataForLIM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WeekCommencing" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPPSDiffDataForLIMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" ref="GetPPSDiffDataForLIMResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified">
+      <s:element name="GetPPSDiffDataForLIMResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="productPrice">
+              <s:complexType>
+                <s:attribute name="ProductId" type="s:long" use="required" />
+                <s:attribute name="ProductName" type="s:string" />
+                <s:attribute name="NamedRange" type="s:string" />
+                <s:attribute name="price" type="s:double" use="required" />
+                <s:attribute name="Month" type="s:string" />
+                <s:attribute name="Mplus" type="s:int" use="required" />
+                <s:attribute name="Diff" type="s:string" />
+                <s:attribute name="PriceSetDate" type="s:date" use="required" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Dataset">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="unbounded" name="productPrice">
+              <s:complexType>
+                <s:attribute name="ProductId" type="s:long" use="required" />
+                <s:attribute name="ProductName" type="s:string" />
+                <s:attribute name="NamedRange" type="s:string" />
+                <s:attribute name="price" type="s:double" use="required" />
+                <s:attribute name="Month" type="s:string" />
+                <s:attribute name="Mplus" type="s:int" use="required" />
+                <s:attribute name="Diff" type="s:string" />
+                <s:attribute name="PriceSetDate" type="s:date" use="required" />
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetPPSAssetDetailsParam_RefinerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSAssetDetailsParam_Refinery" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsParam_RefinerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSAssetDetailsParam_RefineryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesParam_BusinessUnitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSMarketPricesParam_BusinessUnit" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesParam_BusinessUnitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSMarketPricesParam_BusinessUnitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsParam_RefinerySoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSFinanceReportsParam_Refinery" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsParam_RefinerySoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSFinanceReportsParam_RefineryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSAssetDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSAssetDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSMarketPrices" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSMarketPricesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSPipeTariffsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSPipeTariffs" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSPipeTariffsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSPipeTariffsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSFinanceReports" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSFinanceReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSDiffDataForLIMSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPPSDiffDataForLIM" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSDiffDataForLIMSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPPSDiffDataForLIMResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsParam_RefineryHttpGetIn" />
+  <wsdl:message name="GetPPSAssetDetailsParam_RefineryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesParam_BusinessUnitHttpGetIn" />
+  <wsdl:message name="GetPPSMarketPricesParam_BusinessUnitHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsParam_RefineryHttpGetIn" />
+  <wsdl:message name="GetPPSFinanceReportsParam_RefineryHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsHttpGetIn">
+    <wsdl:part name="refinery" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesHttpGetIn">
+    <wsdl:part name="BusinessUnit" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSPipeTariffsHttpGetIn" />
+  <wsdl:message name="GetPPSPipeTariffsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsHttpGetIn">
+    <wsdl:part name="refinery" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingInfoHttpGetIn" />
+  <wsdl:message name="GetShippingInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSDiffDataForLIMHttpGetIn">
+    <wsdl:part name="WeekCommencing" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSDiffDataForLIMHttpGetOut">
+    <wsdl:part name="Body" element="Dataset" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsParam_RefineryHttpPostIn" />
+  <wsdl:message name="GetPPSAssetDetailsParam_RefineryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesParam_BusinessUnitHttpPostIn" />
+  <wsdl:message name="GetPPSMarketPricesParam_BusinessUnitHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsParam_RefineryHttpPostIn" />
+  <wsdl:message name="GetPPSFinanceReportsParam_RefineryHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsHttpPostIn">
+    <wsdl:part name="refinery" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSAssetDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesHttpPostIn">
+    <wsdl:part name="BusinessUnit" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSMarketPricesHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSPipeTariffsHttpPostIn" />
+  <wsdl:message name="GetPPSPipeTariffsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsHttpPostIn">
+    <wsdl:part name="refinery" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSFinanceReportsHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingInfoHttpPostIn" />
+  <wsdl:message name="GetShippingInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSDiffDataForLIMHttpPostIn">
+    <wsdl:part name="WeekCommencing" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetPPSDiffDataForLIMHttpPostOut">
+    <wsdl:part name="Body" element="Dataset" />
+  </wsdl:message>
+  <wsdl:portType name="PPSXIPSoap">
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <wsdl:input message="tns:GetPPSAssetDetailsParam_RefinerySoapIn" />
+      <wsdl:output message="tns:GetPPSAssetDetailsParam_RefinerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <wsdl:input message="tns:GetPPSMarketPricesParam_BusinessUnitSoapIn" />
+      <wsdl:output message="tns:GetPPSMarketPricesParam_BusinessUnitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <wsdl:input message="tns:GetPPSFinanceReportsParam_RefinerySoapIn" />
+      <wsdl:output message="tns:GetPPSFinanceReportsParam_RefinerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <wsdl:input message="tns:GetPPSAssetDetailsSoapIn" />
+      <wsdl:output message="tns:GetPPSAssetDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <wsdl:input message="tns:GetPPSMarketPricesSoapIn" />
+      <wsdl:output message="tns:GetPPSMarketPricesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <wsdl:input message="tns:GetPPSPipeTariffsSoapIn" />
+      <wsdl:output message="tns:GetPPSPipeTariffsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <wsdl:input message="tns:GetPPSFinanceReportsSoapIn" />
+      <wsdl:output message="tns:GetPPSFinanceReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <wsdl:input message="tns:GetShippingInfoSoapIn" />
+      <wsdl:output message="tns:GetShippingInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <wsdl:input message="tns:GetPPSDiffDataForLIMSoapIn" />
+      <wsdl:output message="tns:GetPPSDiffDataForLIMSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PPSXIPHttpGet">
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <wsdl:input message="tns:GetPPSAssetDetailsParam_RefineryHttpGetIn" />
+      <wsdl:output message="tns:GetPPSAssetDetailsParam_RefineryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <wsdl:input message="tns:GetPPSMarketPricesParam_BusinessUnitHttpGetIn" />
+      <wsdl:output message="tns:GetPPSMarketPricesParam_BusinessUnitHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <wsdl:input message="tns:GetPPSFinanceReportsParam_RefineryHttpGetIn" />
+      <wsdl:output message="tns:GetPPSFinanceReportsParam_RefineryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <wsdl:input message="tns:GetPPSAssetDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetPPSAssetDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <wsdl:input message="tns:GetPPSMarketPricesHttpGetIn" />
+      <wsdl:output message="tns:GetPPSMarketPricesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <wsdl:input message="tns:GetPPSPipeTariffsHttpGetIn" />
+      <wsdl:output message="tns:GetPPSPipeTariffsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <wsdl:input message="tns:GetPPSFinanceReportsHttpGetIn" />
+      <wsdl:output message="tns:GetPPSFinanceReportsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <wsdl:input message="tns:GetShippingInfoHttpGetIn" />
+      <wsdl:output message="tns:GetShippingInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <wsdl:input message="tns:GetPPSDiffDataForLIMHttpGetIn" />
+      <wsdl:output message="tns:GetPPSDiffDataForLIMHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="PPSXIPHttpPost">
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <wsdl:input message="tns:GetPPSAssetDetailsParam_RefineryHttpPostIn" />
+      <wsdl:output message="tns:GetPPSAssetDetailsParam_RefineryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <wsdl:input message="tns:GetPPSMarketPricesParam_BusinessUnitHttpPostIn" />
+      <wsdl:output message="tns:GetPPSMarketPricesParam_BusinessUnitHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <wsdl:input message="tns:GetPPSFinanceReportsParam_RefineryHttpPostIn" />
+      <wsdl:output message="tns:GetPPSFinanceReportsParam_RefineryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <wsdl:input message="tns:GetPPSAssetDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetPPSAssetDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <wsdl:input message="tns:GetPPSMarketPricesHttpPostIn" />
+      <wsdl:output message="tns:GetPPSMarketPricesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <wsdl:input message="tns:GetPPSPipeTariffsHttpPostIn" />
+      <wsdl:output message="tns:GetPPSPipeTariffsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <wsdl:input message="tns:GetPPSFinanceReportsHttpPostIn" />
+      <wsdl:output message="tns:GetPPSFinanceReportsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <wsdl:input message="tns:GetShippingInfoHttpPostIn" />
+      <wsdl:output message="tns:GetShippingInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <wsdl:input message="tns:GetPPSDiffDataForLIMHttpPostIn" />
+      <wsdl:output message="tns:GetPPSDiffDataForLIMHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PPSXIPSoap" type="tns:PPSXIPSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSAssetDetailsParam_Refinery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSMarketPricesParam_BusinessUnit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSFinanceReportsParam_Refinery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSAssetDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSMarketPrices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSPipeTariffs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSFinanceReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetShippingInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <soap:operation soapAction="http://ppsxip.com/webservices/GetPPSDiffDataForLIM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PPSXIPSoap12" type="tns:PPSXIPSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSAssetDetailsParam_Refinery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSMarketPricesParam_BusinessUnit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSFinanceReportsParam_Refinery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSAssetDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSMarketPrices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSPipeTariffs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSFinanceReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetShippingInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <soap12:operation soapAction="http://ppsxip.com/webservices/GetPPSDiffDataForLIM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PPSXIPHttpGet" type="tns:PPSXIPHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <http:operation location="/GetPPSAssetDetailsParam_Refinery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <http:operation location="/GetPPSMarketPricesParam_BusinessUnit" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <http:operation location="/GetPPSFinanceReportsParam_Refinery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <http:operation location="/GetPPSAssetDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <http:operation location="/GetPPSMarketPrices" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <http:operation location="/GetPPSPipeTariffs" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <http:operation location="/GetPPSFinanceReports" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <http:operation location="/GetShippingInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <http:operation location="/GetPPSDiffDataForLIM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="PPSXIPHttpPost" type="tns:PPSXIPHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetPPSAssetDetailsParam_Refinery">
+      <http:operation location="/GetPPSAssetDetailsParam_Refinery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPricesParam_BusinessUnit">
+      <http:operation location="/GetPPSMarketPricesParam_BusinessUnit" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReportsParam_Refinery">
+      <http:operation location="/GetPPSFinanceReportsParam_Refinery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSAssetDetails">
+      <http:operation location="/GetPPSAssetDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSMarketPrices">
+      <http:operation location="/GetPPSMarketPrices" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSPipeTariffs">
+      <http:operation location="/GetPPSPipeTariffs" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSFinanceReports">
+      <http:operation location="/GetPPSFinanceReports" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingInfo">
+      <http:operation location="/GetShippingInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPPSDiffDataForLIM">
+      <http:operation location="/GetPPSDiffDataForLIM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PPSXIP">
+    <wsdl:port name="PPSXIPSoap" binding="tns:PPSXIPSoap">
+      <soap:address location="http://10.162.208.113/PPSXIP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PPSXIPSoap12" binding="tns:PPSXIPSoap12">
+      <soap12:address location="http://10.162.208.113/PPSXIP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PPSXIPHttpGet" binding="tns:PPSXIPHttpGet">
+      <http:address location="http://10.162.208.113/PPSXIP.asmx" />
+    </wsdl:port>
+    <wsdl:port name="PPSXIPHttpPost" binding="tns:PPSXIPHttpPost">
+      <http:address location="http://10.162.208.113/PPSXIP.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
