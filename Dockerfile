@@ -20,14 +20,14 @@
 
 #CMD node application.js
 
-#FROM node:7
-registry.access.redhat.com/rhscl/nodejs-6-rhel7
+FROM node:7
+#registry.access.redhat.com/rhscl/nodejs-6-rhel7
 WORKDIR /app
 USER tope
 COPY package.json /app
 RUN scl enable rh-nodejs6 'npm install'
 #RUN npm install
 COPY . /app
-CMD node index.js
+CMD node application.js
 EXPOSE 8081
 Build Docker
