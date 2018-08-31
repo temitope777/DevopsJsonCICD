@@ -1,4 +1,22 @@
-const probe = require('probe-mon')
+'use strict';
+
+const express = require('express');
+
+// Constants
+const PORT = 8081;
+const HOST = '0.0.0.0';
+
+// App
+const app = express();
+app.get('/', (req, res) => {
+  res.send('Hello world\n');
+});
+
+app.listen(PORT, HOST);
+console.log(`Running on http://${HOST}:${PORT}`);
+
+
+/* const probe = require('probe-mon')
 const express = require('express')
 const {
   getipsdata,
@@ -38,7 +56,7 @@ app.use((req, res, next) => {
   })
 })
 
-const server = app.listen(8082, function () {
+const server = app.listen(8081, function () {
   var port = server.address().port;
   console.log('Starting server at port %s', port)
 })
@@ -49,4 +67,4 @@ module.exports = Object.assign({}, {
   getipspps,
   gettoken,
   app
-})
+}) */

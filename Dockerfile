@@ -20,14 +20,35 @@
 
 #CMD node application.js
 
-FROM node:7
+#FROM node:7
 #registry.access.redhat.com/rhscl/nodejs-6-rhel7
-WORKDIR /app
-USER tope
-COPY package.json /app
-RUN scl enable rh-nodejs6 'npm install'
+#WORKDIR /app
+#USER root
+#COPY package.json /app
+#RUN scl enable rh-nodejs6 'npm install'
 #RUN npm install
-COPY . /app
-CMD node application.js
+#COPY . /app
+
+#EXPOSE 8081
+#CMD node application.js
+#CMD [ "npm", "start" ]
+
+FROM node:8
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
+
+RUN npm install
+# If you are building your code for production
+# RUN npm install --only=production
+
+# Bundle app source
+COPY . .
+
 EXPOSE 8081
-Build Docker
+CMD [ "npm", "start" ]
