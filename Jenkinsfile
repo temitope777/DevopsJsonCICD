@@ -1,9 +1,16 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('Build') {
+      agent {
+        docker {
+          image 'node:6-alpine'
+          args '-p 3000:3000'
+        }
+
+      }
       steps {
-        powershell(script: 'ccc/grf', encoding: 'base64')
+        sh 'npm start'
       }
     }
   }
