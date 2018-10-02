@@ -13,6 +13,11 @@ pipeline {
         sh 'npm install'
       }
     }
+    stage('test') {
+      steps {
+        sh 'echo \'123\''
+      }
+    }
   }
   environment {
     test = '1'
