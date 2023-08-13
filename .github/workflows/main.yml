@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: terraform validation
         run: |
-          make  ${{ inputs.environment }}" terraform-apply
+          make  ${{ inputs.environment }} terraform-apply
