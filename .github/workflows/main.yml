@@ -19,4 +19,4 @@ jobs:
     steps:
       - name: terraform validation
         run: |
-          echo "selected environment is : ${{ inputs.environment }}"
+          echo "selected environment is : make  ${{ inputs.environment }}" terraform-apply
